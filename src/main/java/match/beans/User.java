@@ -54,7 +54,7 @@ public class User extends BaseEntity implements UserDetails {
 	}
 
 	public static enum Role {
-		SUPER_ADMIN, ADMIN, APPLICANT
+		ROLE_SUPER_ADMIN, ROLE_ADMIN, ROLE_APPLICANT
 	}
 
 }
