@@ -6,10 +6,12 @@ import org.springframework.boot.orm.jpa.EntityScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.domain.AuditorAware;
 import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import match.util.Util;
 
+@EnableJpaAuditing
 @EnableJpaRepositories
 @SpringBootApplication
 @EntityScan(basePackageClasses = { Application.class, Jsr310JpaConverters.class })

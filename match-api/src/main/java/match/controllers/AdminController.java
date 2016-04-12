@@ -7,6 +7,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +18,7 @@ import com.mysema.query.types.Predicate;
 
 import lombok.Getter;
 import match.beans.User;
+import match.beans.User.Role;
 import match.beans.repos.UserRepo;
 
 @RestController
@@ -27,6 +29,8 @@ public class AdminController extends CrudController<User, UserRepo> {
 	@Getter
 	@Autowired
 	private UserRepo repository;
+	@Autowired
+	private PasswordEncoder passwordEncoder;
 
 	@Override
 	@RequestMapping(method = RequestMethod.GET, path = "/{id}")
@@ -37,6 +41,8 @@ public class AdminController extends CrudController<User, UserRepo> {
 	@Override
 	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<Void> save(@RequestBody @Valid User user) {
+		user.setRole(Role.ROLE_ADMIN);
+		user.setPassword(passwordEncoder.encode(user.getPassword()));
 		return super.save(user);
 	}
 

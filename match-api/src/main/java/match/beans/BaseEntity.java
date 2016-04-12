@@ -16,8 +16,6 @@ import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import lombok.Data;
 
 @Data
@@ -31,18 +29,17 @@ public class BaseEntity implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	protected Long id;
 
-	@JsonIgnore
 	@CreatedBy
 	@Column(updatable = false)
 	private Long createdBy;
-	@JsonIgnore
+
 	@LastModifiedBy
 	private Long modifiedBy;
-	@JsonIgnore
+
 	@CreatedDate
 	@Column(updatable = false)
 	private LocalDateTime createdDate;
-	@JsonIgnore
+
 	@LastModifiedDate
 	private LocalDateTime modifiedDate;
 }
