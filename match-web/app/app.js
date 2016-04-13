@@ -2,13 +2,19 @@
 
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
-    'ngRoute'
+    'ngRoute', 'pascalprecht.translate'
 ]).
-config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider) {
+config(['$routeProvider', '$httpProvider', '$translateProvider', function($routeProvider, $httpProvider, $translateProvider) {
 
     $routeProvider.otherwise({
         redirectTo: '/home'
     });
+
+    $translateProvider.useStaticFilesLoader({
+        prefix: 'messages/',
+        suffix: '.json'
+    });
+    $translateProvider.preferredLanguage('ar');
 
 }]).run(['$rootScope', '$location', 'LoginService', 'AlertService', function($rootScope, $location, LoginService, AlertService) {
 
