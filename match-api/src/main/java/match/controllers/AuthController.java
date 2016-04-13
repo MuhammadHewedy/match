@@ -12,13 +12,8 @@ import match.util.Util;
 @RequestMapping("/api/auth")
 public class AuthController {
 
-	@RequestMapping(path = "/loggedInUser", method = RequestMethod.GET)
-	public ResponseEntity<User> getLoggedInUser() {
+	@RequestMapping(path = "/login", method = RequestMethod.GET)
+	public ResponseEntity<User> login() {
 		return ResponseEntity.ok(Util.currentUser().get());
-	}
-
-	@RequestMapping(path = "/login", method = RequestMethod.POST)
-	public ResponseEntity<Void> login() {
-		return ResponseEntity.ok().build();
 	}
 }

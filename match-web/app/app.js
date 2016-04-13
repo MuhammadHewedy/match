@@ -4,8 +4,9 @@
 angular.module('myApp', [
     'ngRoute'
 ]).
-config(['$routeProvider', function($routeProvider) {
+config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider) {
     // $routeProvider.otherwise({
     //     redirectTo: '/view1'
     // });
+
 }]);

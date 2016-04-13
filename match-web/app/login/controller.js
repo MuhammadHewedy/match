@@ -18,14 +18,14 @@ angular.module('myApp')
 
     $scope.login = function() {
         LoginService.login($scope.credentials).then(
-            function() {
-                $rootScope.authenticated = true;
-                console.log('authenticated');
+            function(user) {
+                $rootScope.user = user;
+                console.log('authenticated: ', user);
             },
             function(error) {
-                $rootScope.authenticated = false;
+                $rootScope.user = null;
                 AlertService.error(error.data.message);
-                console.error(error.data.message);
+                console.error(error.data);
             });
     }
 }]);

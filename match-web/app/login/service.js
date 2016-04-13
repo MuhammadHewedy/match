@@ -7,7 +7,7 @@ angular.module('myApp')
         login: function(credentials) {
             var auth = 'Basic ' + Base64Service.encode(credentials.username + ':' + credentials.password);
             return $http({
-                method: 'POST',
+                method: 'GET',
                 url: '/api/auth/login',
                 headers: {
                     'Authorization': auth

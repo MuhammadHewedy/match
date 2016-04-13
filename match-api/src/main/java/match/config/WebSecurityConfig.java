@@ -12,6 +12,7 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.data.repository.query.SecurityEvaluationContextExtension;
@@ -43,8 +44,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	protected void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-		auth.userDetailsService(username -> Optional.of(userRepo.findOne(QUser.user.username.eq(username)))
-				.orElseThrow(RuntimeException::new)).passwordEncoder(passwordEncoder());
+		auth.userDetailsService(username -> Optional.ofNullable(userRepo.findOne(QUser.user.username.eq(username)))
+				.orElseThrow(() -> new UsernameNotFoundException(""))).passwordEncoder(passwordEncoder());
 	}
 	
 	@Bean
