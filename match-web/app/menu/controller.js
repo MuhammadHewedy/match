@@ -2,17 +2,15 @@
 
 angular.module('myApp')
 
-.controller('MenuCtrl', ['$rootScope', '$location', '$scope', 'LoginService', function($rootScope, $location, $scope, LoginService) {
+.controller('MenuCtrl', ['$rootScope', '$location', '$scope', 'LoginService', 'MenuService', function($rootScope, $location, $scope, LoginService, MenuService) {
 
-    $rootScope.menu = [{
-        title: 'manage_admin',
-        role: ['SUPER_ADMIN_ROLE'],
-        link: '/admin'
-    }, {
-        title: 'manage_applicant',
-        role: ['SUPER_ADMIN_ROLE', 'ADMIN_ROLE'],
-        link: '/applicant'
-    }];
+    $scope.userMenu = []
+
+    angular.forEach(MenuService, function(item) {
+        if (item.role.indexOf($rootScope.user.role) >= 0) {
+            $scope.userMenu.push(item)
+        }
+    });
 
     $scope.logout = function() {
         LoginService.logout().then(function() {
