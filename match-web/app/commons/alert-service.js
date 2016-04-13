@@ -23,6 +23,9 @@ angular.module('myApp')
             }
             $rootScope.alerts = [];
             $rootScope.alerts.push(alert);
+        },
+        reset: function() {
+            $rootScope.alerts = [];
         }
     }
 }]);

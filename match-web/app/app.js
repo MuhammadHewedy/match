@@ -10,11 +10,13 @@ config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvide
         redirectTo: '/home'
     });
 
-}]).run(['$rootScope', '$location', 'LoginService', function($rootScope, $location, LoginService) {
+}]).run(['$rootScope', '$location', 'LoginService', 'AlertService', function($rootScope, $location, LoginService, AlertService) {
 
     $rootScope.user = null;
 
     $rootScope.$on('$routeChangeStart', function(ev, next, curr) {
+        AlertService.reset();
+
         if (next.$$route) {
             if (!curr) { //on page reload
                 authenticateOnServer(LoginService, $rootScope, $location);
