@@ -3,5 +3,7 @@
     "login": "دخول",
     "username": "إسم المستخدم",
     "password": "كلمة المرور",
-    "logout": "خروج"
+    "logout": "خروج",
+    "manage_applicant": "إدارة الطلبات",
+    "manage_admin": "إدارة مدراء النظام"
 }
