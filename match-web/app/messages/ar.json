@@ -2,5 +2,6 @@
     "login.title": "تسجيل الدخول",
     "login": "دخول",
     "username": "إسم المستخدم",
-    "password": "كلمة المرور"
+    "password": "كلمة المرور",
+    "logout": "خروج"
 }

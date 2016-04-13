@@ -30,11 +30,4 @@ angular.module('myApp')
             });
     }
 
-    $scope.logout = function() {
-        LoginService.logout().then(function() {
-            $location.path('/login');
-            $rootScope.user = null;
-        })
-    }
-
 }]);
