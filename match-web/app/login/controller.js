@@ -24,7 +24,7 @@ angular.module('myApp')
             },
             function(error) {
                 $rootScope.authenticated = false;
-                AlertService.danger(error.data.message);
+                AlertService.error(error.data.message);
                 console.error(error.data.message);
             });
     }

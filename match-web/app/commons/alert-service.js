@@ -5,19 +5,21 @@ angular.module('myApp')
 
 .factory('AlertService', ['$rootScope', function($rootScope) {
     return {
-        success: function(msg) {
+        success: function(msg, link) {
             var alert = {
                 message: msg,
-                type: 'success'
+                type: 'success',
+                link: link
             }
 
             $rootScope.alerts = [];
             $rootScope.alerts.push(alert);
         },
-        danger: function(msg) {
+        error: function(msg, link) {
             var alert = {
                 message: msg,
-                type: 'danger'
+                type: 'danger',
+                link: link
             }
             $rootScope.alerts = [];
             $rootScope.alerts.push(alert);
