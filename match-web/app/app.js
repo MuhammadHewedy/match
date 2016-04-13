@@ -16,6 +16,8 @@ config(['$routeProvider', '$httpProvider', '$translateProvider', function($route
     });
     $translateProvider.preferredLanguage('ar');
 
+    $httpProvider.defaults.headers.common['Accept-Language'] = 'ar';
+
 }]).run(['$rootScope', '$location', 'LoginService', 'AlertService', function($rootScope, $location, LoginService, AlertService) {
 
     $rootScope.user = null;
