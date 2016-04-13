@@ -5,5 +5,6 @@
     "password": "كلمة المرور",
     "logout": "خروج",
     "manage_applicant": "إدارة الطلبات",
-    "manage_admin": "إدارة مدراء النظام"
+    "manage_admin": "إدارة مدراء النظام",
+    "home_paragraph": "مرحبا, من فضلك إختر من القائمة بالأعلى."
 }
