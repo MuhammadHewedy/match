@@ -9,7 +9,7 @@ angular.module('myApp')
     });
 }])
 
-.controller('LoginCtrl', ['$scope', '$rootScope', 'LoginService', 'AlertService', function($scope, $rootScope, LoginService, AlertService) {
+.controller('LoginCtrl', ['$scope', '$rootScope', '$location', 'LoginService', 'AlertService', function($scope, $rootScope, $location, LoginService, AlertService) {
 
     $scope.credentials = {
         username: '',
@@ -20,6 +20,7 @@ angular.module('myApp')
         LoginService.login($scope.credentials).then(
             function(user) {
                 $rootScope.user = user;
+                $location.path('/')
                 console.log('authenticated: ', user);
             },
             function(error) {
