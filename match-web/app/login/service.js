@@ -17,6 +17,9 @@ angular.module('myApp')
             }).then(function(response) {
                 return response.data;
             });
+        },
+        logout: function() {
+            return $http.get('/api/auth/logout')
         }
     }
 }]);

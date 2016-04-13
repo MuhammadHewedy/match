@@ -29,10 +29,7 @@ config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvide
             }
         }
     });
-
-}])
-
-;
+}]);
 
 function authenticateOnServer(LoginService, $rootScope, $location) {
     LoginService.login().then(

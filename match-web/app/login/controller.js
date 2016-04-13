@@ -29,4 +29,12 @@ angular.module('myApp')
                 console.error(error.data);
             });
     }
+
+    $scope.logout = function() {
+        LoginService.logout().then(function() {
+            $location.path('/login');
+            $rootScope.user = null;
+        })
+    }
+
 }]);

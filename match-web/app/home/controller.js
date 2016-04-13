@@ -9,6 +9,7 @@ angular.module('myApp')
     });
 }])
 
-.controller('HomeCtrl', ['$scope', '$rootScope', 'LoginService', 'AlertService', function($scope, $rootScope, LoginService, AlertService) {
+.controller('HomeCtrl', ['$scope', '$location', function($scope, $location) {
+
 
 }]);
