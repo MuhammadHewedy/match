@@ -30,6 +30,12 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 <div class="container">
+    <div class="alert alert-{{alert.type}} alert-dismissable" ng-repeat="alert in alerts">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        {{alert.message}}
+        <!-- <a href="#" class="alert-link">Alert Link</a>. -->
+    </div>
+
     <div ng-view></div>
 </div>
 
@@ -48,13 +54,16 @@
   <!-- put ng plugins here-->
 
   <script src="app.js"></script>
-  <script src="view1/view1.js"></script>
-  <script src="view2/view2.js"></script>
-  <script src="components/version/version.js"></script>
-  <script src="components/version/version-directive.js"></script>
-  <script src="components/version/interpolate-filter.js"></script>
-  <!-- put ng app js here-->
 
+
+  <!-- commons services -->
+  <script src="commons/base64-service.js"></script>
+  <script src="commons/alert-service.js"></script>
+
+  <!-- services -->
+  <script src="login/service.js"></script>
+
+  <!-- controllers -->
   <script src="login/controller.js"></script>
 
 </body>

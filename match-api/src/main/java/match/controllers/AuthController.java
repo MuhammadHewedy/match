@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import match.beans.User;
 import match.util.Util;
 
 @RestController
@@ -12,12 +13,12 @@ import match.util.Util;
 public class AuthController {
 
 	@RequestMapping(path = "/loggedInUser", method = RequestMethod.GET)
-	public ResponseEntity<?> getLoggedInUser() {
+	public ResponseEntity<User> getLoggedInUser() {
 		return ResponseEntity.ok(Util.currentUser().get());
 	}
 
 	@RequestMapping(path = "/login", method = RequestMethod.POST)
-	public ResponseEntity<?> login() {
-		return ResponseEntity.ok(Util.currentUser().get());
+	public ResponseEntity<Void> login() {
+		return ResponseEntity.ok().build();
 	}
 }
