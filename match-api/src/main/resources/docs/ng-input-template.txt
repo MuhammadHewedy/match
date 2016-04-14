@@ -1,0 +1,12 @@
+<div class="form-group col-md-6">
+	<label>${field}</label>
+	<input type="${type}" class="form-control" ng-model="${object}.${field}" name="${field}" placeholder="{{'${field}' | translate}}" required
+		ng-minlength="${minx}" ng-maxlength="${max}" ng-pattern="/^${pattern}$$/" unique>
+		<div ng-messages="form.${field}.$$error" ng-if="form.${field}.$$dirty" class="has-error">
+			<div class="help-block" ng-message="required">{{'field.required' | translate}}</div>
+			<div class="help-block" ng-message="pattern">{{'field.invalid.pattern' | translate}}</div>
+			<div class="help-block" ng-message="minlength, maxlength">{{'field.should.be.between' | translate}} ${minx} : ${max}
+					{{'characters' | translate}}</div>
+			<div class="help-block" ng-message="unique">{{'field.duplicate' || translate}}</div>
+		</div>
+</div>
