@@ -21,7 +21,7 @@ angular.module('myApp')
     })
 
     // -- update
-    $scope.update = function() {
+    $scope.save = function() {
         $scope.item.$update(function() {
             AlertService.success();
             $location.path('/applicants');

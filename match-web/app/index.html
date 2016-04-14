@@ -31,7 +31,7 @@
 <div class="container">
     <div class="alert alert-{{alert.type}} alert-dismissable" ng-repeat="alert in alerts">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        {{alert.message}}
+        {{alert.message | translate}}
         <a href="{{alert.link}}" target="_blank" class="alert-link" ng-show="alert.link">More</a>.
     </div>
 

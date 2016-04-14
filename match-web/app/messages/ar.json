@@ -22,5 +22,10 @@
     "eyeColor": "لون العينين",
     "hairColor": "لون الشعر",
     "skinColor": "لون البشره",
-    "field.required": "الحقل مطلوب"
+    "field.required": "الحقل مطلوب",
+    "cancel": "إلغاء",
+    "male": "ذكر",
+    "female": "أنثى",
+    "create.applicant": "إضافة طلب",
+    "update.applicant": "تعديل طلب"
 }

@@ -1,21 +1,54 @@
-<form name="form">
+<h3>{{type + '.applicant'| translate}}</h3>
+
+<form name="form" novalidate>
+
+    <div class="row">
+        <div class="form-group col-md-6">
+            <label translate>username</label>
+            <input type="text" class="form-control" ng-model="item.user.username" name="username" placeholder="{{'username' | translate}}" required>
+            <div ng-messages="form.username.$error" ng-if="form.username.$dirty" class="has-error">
+                <div class="help-block" ng-message="required">{{'field.required' | translate}}</div>
+            </div>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label translate>password</label>
+            <input type="text" class="form-control" ng-model="item.user.password" name="password" placeholder="{{'password' | translate}}" required>
+            <div ng-messages="form.password.$error" ng-if="form.password.$dirty" class="has-error">
+                <div class="help-block" ng-message="required">{{'field.required' | translate}}</div>
+            </div>
+        </div>
+
+    </div>
 
     <div class="row">
         <div class="form-group col-md-6">
             <label translate>gender</label>
-            <input type="text" class="form-control" ng-model="item.gender" name="gender" placeholder="{{'gender' | translate}}" required >
-            <div ng-messages="form.gender.$$error" ng-if="form.gender.$$dirty" class="has-error">
+            <select class="form-control" ng-model="item.gender" name="gender" required>
+                <option value="m">
+                    {{'male' | translate}}
+                </option>
+                <option value="f">
+                    {{'female' | translate}}
+                </option>
+            </select>
+            <div ng-messages="form.gender.$error" ng-if="form.gender.$dirty" class="has-error">
                 <div class="help-block" ng-message="required">{{'field.required' | translate}}</div>
             </div>
         </div>
 
         <div class="form-group col-md-6">
             <label translate>age</label>
-            <input type="text" class="form-control" ng-model="item.age" name="age" placeholder="{{'age' | translate}}" required >
-            <div ng-messages="form.age.$$error" ng-if="form.age.$$dirty" class="has-error">
+            <input type="number" class="form-control" ng-model="item.age" name="age" placeholder="{{'age' | translate}}" required>
+            <div ng-messages="form.age.$error" ng-if="form.age.$dirty" class="has-error">
                 <div class="help-block" ng-message="required">{{'field.required' | translate}}</div>
             </div>
         </div>
+    </div>
+
+    <div class="row">
+        <button type="button" class="btn btn-primary" ng-click="form.$valid && save()" ng-disabled="form.$invalid" translate>{{type | translate}}</button>
+        <a href="#/applicants/1" class="btn btn-default" translate>cancel</a>
     </div>
 
 </form>
