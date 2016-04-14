@@ -19,7 +19,8 @@
     "angular-translate": "~2.11.0",
     "bootstrap-rtl": "~3.4.0",
     "angular-translate-loader-static-files": "~2.11.0",
-    "angular-resource": "~1.5.3"
+    "angular-resource": "~1.5.3",
+    "angular-messages": "~1.5.3"
   },
   "resolutions": {
     "angular": "~1.4.0"
