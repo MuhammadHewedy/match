@@ -2,7 +2,7 @@
 
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
-    'ngRoute', 'pascalprecht.translate', 'ngResource', 'ngMessages'
+    'ngRoute', 'ui.bootstrap', 'pascalprecht.translate', 'ngResource', 'ngMessages'
 ]).
 config(['$routeProvider', '$httpProvider', '$translateProvider', function($routeProvider, $httpProvider, $translateProvider) {
 
@@ -30,7 +30,7 @@ config(['$routeProvider', '$httpProvider', '$translateProvider', function($route
                 authenticateOnServer(LoginService, $rootScope, $location, next);
             } else {
                 if ($rootScope.user) {
-                    if (next.$route == '/login') {
+                    if (next.$$route.originalPath == '/login') {
                         $location.path('/')
                     }
                 } else {

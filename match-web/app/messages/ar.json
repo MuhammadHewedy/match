@@ -44,5 +44,9 @@
     "gender.f": "أنثى",
     "create.applicant": "إضافة طلب",
     "update.applicant": "تعديل طلب",
-    "update": "تعديل"
+    "update": "تعديل",
+    "first_text": "الأول",
+    "last_text": "الأخير",
+    "next_text": "التالي",
+    "previous_text": "السابق"
 }
