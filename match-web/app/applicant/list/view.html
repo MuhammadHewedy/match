@@ -15,29 +15,31 @@
                             <th translate>age</th>
                             <th translate>nationality</th>
                             <th translate>countryOfPlace</th>
-                            <th translate>governorate</th>
-                            <th translate>bodyShape</th>
                             <th translate>weight</th>
                             <th translate>length</th>
-                            <th translate>eyeColor</th>
-                            <th translate>hairColor</th>
                             <th translate>skinColor</th>
+                            <th translate>educationLevel</th>
+                            <th translate>job</th>
+                            <th translate>religion</th>
+                            <th translate>maritalStatus</th>
+                            <th translate>haveKids</th>
                             <th translate>update</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr ng-repeat="item in list">
-                            <td>{{item.gender}}</td>
+                            <td>{{'gender.' + item.gender  | translate}}</td>
                             <td>{{item.age}}</td>
                             <td>{{item.nationality}}</td>
                             <td>{{item.countryOfPlace}}</td>
-                            <td>{{item.governorate}}</td>
-                            <td>{{item.bodyShape}}</td>
                             <td>{{item.weight}}</td>
                             <td>{{item.length}}</td>
-                            <td>{{item.eyeColor}}</td>
-                            <td>{{item.hairColor}}</td>
                             <td>{{item.skinColor}}</td>
+                            <td>{{item.educationLevel}}</td>
+                            <td>{{item.job}}</td>
+                            <td>{{item.religion}}</td>
+                            <td>{{item.maritalStatus}}</td>
+                            <td>{{item.haveKids}}</td>
                             <td><a href="#/applicants/edit/{{item.id}}" translate>update<a/></td>
                         </tr>
                     </tbody>

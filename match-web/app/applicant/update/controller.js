@@ -9,7 +9,7 @@ angular.module('myApp')
     });
 }])
 
-.controller('UpdateApplicantCtrl', ['$scope', 'Applicant', 'AlertService', '$routeParams', function($scope, Applicant, AlertService, $routeParams) {
+.controller('UpdateApplicantCtrl', ['$scope', 'Applicant', 'AlertService', '$routeParams', '$location', function($scope, Applicant, AlertService, $routeParams, $location) {
 
     $scope.type = 'update'
 
@@ -23,8 +23,8 @@ angular.module('myApp')
     // -- update
     $scope.save = function() {
         $scope.item.$update(function() {
+            $location.path('/applicants/1');
             AlertService.success();
-            $location.path('/applicants');
         }, function(error) {
             AlertService.error(error.data.message);
         })

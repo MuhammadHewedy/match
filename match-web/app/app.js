@@ -24,7 +24,6 @@ config(['$routeProvider', '$httpProvider', '$translateProvider', function($route
     $rootScope.user = null;
 
     $rootScope.$on('$routeChangeStart', function(ev, next, curr) {
-        AlertService.reset();
 
         if (next.$$route) {
             if (!curr) { //on page reload
