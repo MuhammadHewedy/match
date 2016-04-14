@@ -27,5 +27,6 @@
     "male": "ذكر",
     "female": "أنثى",
     "create.applicant": "إضافة طلب",
-    "update.applicant": "تعديل طلب"
+    "update.applicant": "تعديل طلب",
+    "update": "تعديل"
 }
