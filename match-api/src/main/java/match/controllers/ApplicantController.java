@@ -18,6 +18,7 @@ import com.mysema.query.types.Predicate;
 
 import lombok.Getter;
 import match.beans.Applicant;
+import match.beans.QApplicant;
 import match.beans.User;
 import match.beans.User.Role;
 import match.beans.repos.ApplicantRepo;
@@ -57,6 +58,6 @@ public class ApplicantController extends CrudController<Applicant, ApplicantRepo
 	@Override
 	@RequestMapping(method = RequestMethod.GET)
 	public ResponseEntity<Page<Applicant>> query(Predicate predicate, Pageable pageable) {
-		return super.query(predicate, pageable);
+		return super.query(QApplicant.applicant.user.role.eq(Role.ROLE_APPLICANT).and(predicate), pageable);
 	}
 }

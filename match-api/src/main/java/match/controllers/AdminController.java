@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.mysema.query.types.Predicate;
 
 import lombok.Getter;
+import match.beans.QUser;
 import match.beans.User;
 import match.beans.User.Role;
 import match.beans.repos.UserRepo;
@@ -55,6 +56,6 @@ public class AdminController extends CrudController<User, UserRepo> {
 	@Override
 	@RequestMapping(method = RequestMethod.GET)
 	public ResponseEntity<Page<User>> query(Predicate predicate, Pageable pageable) {
-		return super.query(predicate, pageable);
+		return super.query(QUser.user.role.eq(Role.ROLE_ADMIN).and(predicate), pageable);
 	}
 }

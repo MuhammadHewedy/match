@@ -42,8 +42,10 @@ public class User extends BaseEntity implements UserDetails {
 	@Column(updatable = false)
 	private Role role;
 
+	@JsonIgnore
 	@OneToOne(mappedBy = "user")
 	private Applicant applicant;
+
 
 	@JsonIgnore
 	@Override
