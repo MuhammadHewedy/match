@@ -9,7 +9,7 @@ angular.module('myApp')
     });
 }])
 
-.controller('CreateApplicantCtrl', ['$scope', 'Applicant', 'AlertService', function($scope, Applicant, AlertService) {
+.controller('CreateApplicantCtrl', ['$scope', 'Applicant', 'AlertService', 'LookupService', function($scope, Applicant, AlertService, LookupService) {
 
     $scope.type = 'create'
 
@@ -23,5 +23,7 @@ angular.module('myApp')
             AlertService.error(error.data.message);
         })
     };
+
+    $scope.lookups = LookupService;
 
 }]);

@@ -9,7 +9,7 @@ angular.module('myApp')
     });
 }])
 
-.controller('UpdateApplicantCtrl', ['$scope', 'Applicant', 'AlertService', '$routeParams', '$location', function($scope, Applicant, AlertService, $routeParams, $location) {
+.controller('UpdateApplicantCtrl', ['$scope', 'Applicant', 'AlertService', '$routeParams', '$location', 'LookupService', function($scope, Applicant, AlertService, $routeParams, $location, LookupService) {
 
     $scope.type = 'update'
 
@@ -23,11 +23,13 @@ angular.module('myApp')
     // -- update
     $scope.save = function() {
         $scope.item.$update(function() {
-            $location.path('/applicants/1');
+            $location.path('/applicants');
             AlertService.success();
         }, function(error) {
             AlertService.error(error.data.message);
         })
     };
+
+    $scope.lookups = LookupService;;
 
 }]);
