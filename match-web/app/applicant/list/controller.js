@@ -11,6 +11,8 @@ angular.module('myApp')
 
 .controller('ListApplicantCtrl', ['$scope', 'Applicant', '$location', '$routeParams', function($scope, Applicant, $location, $routeParams) {
 
+    $scope.isCollapsed = false;
+
     $scope.getData = function() {
         Applicant.query({
             page: $scope.currentPage - 1

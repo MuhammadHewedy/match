@@ -1,0 +1,107 @@
+<div class="row">
+    <div class="form-group col-md-6">
+        <label translate>gender</label>
+        *
+        <select class="form-control" ng-model="item.gender" name="gender" required>
+            <option value="m">
+                {{'gender.m' | translate}}
+            </option>
+            <option value="f">
+                {{'gender.f' | translate}}
+            </option>
+        </select>
+        <div ng-messages="form.gender.$error" ng-if="form.gender.$dirty" class="has-error">
+            <div class="help-block" ng-message="required">{{'field.required' | translate}}</div>
+        </div>
+    </div>
+
+    <div class="form-group col-md-6">
+        <label translate>age</label>
+        *
+        <input type="number" class="form-control" ng-model="item.age" name="age" placeholder="{{'age' | translate}}" required>
+        <div ng-messages="form.age.$error" ng-if="form.age.$dirty" class="has-error">
+            <div class="help-block" ng-message="required">{{'field.required' | translate}}</div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="form-group col-md-6">
+        <label translate>nationality</label>
+        *
+        <select class="form-control" ng-model="item.nationality" name="nationality" required>
+            <option ng-repeat="country in lookups.countries | orderBy:country" value="{{country}}">{{country}}</option>
+        </select>
+        <div ng-messages="form.nationality.$error" ng-if="form.nationality.$dirty" class="has-error">
+            <div class="help-block" ng-message="required">{{'field.required' | translate}}</div>
+        </div>
+    </div>
+
+    <div class="form-group col-md-6">
+        <label translate>countryOfPlace</label>
+        *
+        <select class="form-control" ng-model="item.countryOfPlace" name="countryOfPlace" required>
+            <option ng-repeat="country in lookups.countries | orderBy:country" value="{{country}}">{{country}}</option>
+        </select>
+        <div ng-messages="form.countryOfPlace.$error" ng-if="form.countryOfPlace.$dirty" class="has-error">
+            <div class="help-block" ng-message="required">{{'field.required' | translate}}</div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="form-group col-md-6">
+        <label translate>weight</label>
+        *
+        <input type="number" class="form-control" ng-model="item.weight" name="weight" placeholder="{{'weight' | translate}}" required>
+        <div ng-messages="form.weight.$error" ng-if="form.weight.$dirty" class="has-error">
+            <div class="help-block" ng-message="required">{{'field.required' | translate}}</div>
+        </div>
+    </div>
+
+    <div class="form-group col-md-6">
+        <label translate>length</label>
+        *
+        <input type="number" class="form-control" ng-model="item.length" name="length" placeholder="{{'length' | translate}}" required>
+        <div ng-messages="form.length.$error" ng-if="form.length.$dirty" class="has-error">
+            <div class="help-block" ng-message="required">{{'field.required' | translate}}</div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="form-group col-md-6">
+        <label translate>job</label>
+        <input type="text" class="form-control" ng-model="item.job" name="job" placeholder="{{'job' | translate}}">
+    </div>
+
+    <div class="form-group col-md-6">
+        <label translate>religion</label>
+        *
+        <select class="form-control" ng-model="item.religion" name="religion" required>
+            <option ng-repeat="religion in lookups.religion" value="{{religion}}">{{religion}}</option>
+        </select>
+        <div ng-messages="form.religion.$error" ng-if="form.religion.$dirty" class="has-error">
+            <div class="help-block" ng-message="required">{{'field.required' | translate}}</div>
+        </div>
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="form-group col-md-6">
+        <label translate>maritalStatus</label>
+        *
+        <select class="form-control" ng-model="item.maritalStatus" name="maritalStatus" required>
+            <option ng-repeat="maritalStatus in lookups.maritalStatus" value="{{maritalStatus}}">{{maritalStatus}}</option>
+        </select>
+        <div ng-messages="form.maritalStatus.$error" ng-if="form.maritalStatus.$dirty" class="has-error">
+            <div class="help-block" ng-message="required">{{'field.required' | translate}}</div>
+        </div>
+    </div>
+
+    <div class="form-group col-md-6">
+        <label translate>haveKids</label>
+        <input type="checkbox" ng-model="item.haveKids" name="haveKids" placeholder="{{'haveKids' | translate}}">
+    </div>
+</div>
