@@ -8,8 +8,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 
+import lombok.AccessLevel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 
 @Data
 @Entity
@@ -33,10 +35,13 @@ public class Applicant extends BaseEntity implements Serializable {
 	private String job;
 	private String religion;
 	private String maritalStatus;
+	@Getter(AccessLevel.NONE)
 	private Boolean haveKids;
+	@Getter(AccessLevel.NONE)
 	private Boolean likeToHaveKids;
 	private Double monthlyIncome;
 	private String religionLevel;
+	@Getter(AccessLevel.NONE)
 	private Boolean hijab;
 	private String socialLevel;
 	private String about;
@@ -44,6 +49,16 @@ public class Applicant extends BaseEntity implements Serializable {
 	private String phoneNumber;
 	private String fatherPhoneNumber;
 	private String idImagePath;
+	
+	public Boolean isHaveKids() {
+		return this.haveKids;
+	}
+	public Boolean isLikeToHaveKids() {
+		return this.likeToHaveKids;
+	}
+	public Boolean isHijab() {
+		return this.hijab;
+	}
 
 	@NotNull
 	@OneToOne(cascade = CascadeType.ALL)
