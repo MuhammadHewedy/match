@@ -1,46 +1,42 @@
 /* app css stylesheet */
 
 @font-face {
-  font-family: 'A_Nefel_Botan';
-  src: url('fonts/A_Nefel_Botan.ttf');
+    font-family: 'A_Nefel_Botan';
+    src: url('fonts/A_Nefel_Botan.ttf');
 }
-
 body {
-  font-family: A_Nefel_Botan;
-  font-size: 16px;
+    font-family: A_Nefel_Botan;
+    font-size: 16px;
 }
-
 .menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0.5em .5em .5em.5em;
-  font-size: 20px;
-  text-align: center;
+    list-style: none;
+    border-bottom: 0.1em solid black;
+    margin-bottom: 2em;
+    padding: 0.5em .5em .5em.5em;
+    font-size: 20px;
+    text-align: center;
 }
-
 .menu:before {
-  content: "[";
+    content: "[";
 }
-
 .menu:after {
-  content: "]";
+    content: "]";
 }
-
 .menu > li {
-  display: inline;
+    display: inline;
 }
-
 .menu > li:before {
-  content: "|";
-  padding-right: 0.3em;
+    content: "|";
+    padding-right: 0.3em;
 }
-
 .menu > li:nth-child(1):before {
-  content: "";
-  padding: 0;
+    content: "";
+    padding: 0;
 }
-
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-  display: none !important;
+    display: none !important;
+}
+table > thead > tr {
+    background-color: #2e6da4;
+    color: #ffffff;
 }
