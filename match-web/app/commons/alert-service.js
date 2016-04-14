@@ -7,7 +7,7 @@ angular.module('myApp')
     return {
         success: function(msg, link) {
             var alert = {
-                message: msg,
+                message: msg ? msg : 'success',
                 type: 'success',
                 link: link
             }
@@ -17,7 +17,7 @@ angular.module('myApp')
         },
         error: function(msg, link) {
             var alert = {
-                message: msg,
+                message: msg ? msg : 'fail',
                 type: 'danger',
                 link: link
             }

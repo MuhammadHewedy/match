@@ -2,7 +2,7 @@
 
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
-    'ngRoute', 'pascalprecht.translate'
+    'ngRoute', 'pascalprecht.translate', 'ngResource'
 ]).
 config(['$routeProvider', '$httpProvider', '$translateProvider', function($routeProvider, $httpProvider, $translateProvider) {
 
@@ -15,6 +15,7 @@ config(['$routeProvider', '$httpProvider', '$translateProvider', function($route
         suffix: '.json'
     });
     $translateProvider.preferredLanguage('ar');
+    $translateProvider.useSanitizeValueStrategy('escape');
 
     $httpProvider.defaults.headers.common['Accept-Language'] = 'ar';
 

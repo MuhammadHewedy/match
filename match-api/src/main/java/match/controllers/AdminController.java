@@ -22,7 +22,7 @@ import match.beans.User.Role;
 import match.beans.repos.UserRepo;
 
 @RestController
-@RequestMapping("/api/admin")
+@RequestMapping("/api/admins")
 @PreAuthorize("hasRole('ROLE_SUPER_ADMIN')")
 public class AdminController extends CrudController<User, UserRepo> {
 
