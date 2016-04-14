@@ -23,7 +23,8 @@ angular.module('myApp')
         Applicant.query({
             page: $routeParams.page - 1
         }, function(list) {
-            $scope.list = list;
+            $scope.list = list.content;
+            console.log($scope.list.content);
         });
     }();
 

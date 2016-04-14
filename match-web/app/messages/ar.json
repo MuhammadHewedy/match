@@ -9,5 +9,17 @@
     "home_paragraph": "مرحبا, من فضلك إختر من القائمة بالأعلى.",
     "success": "تمت العملية بنجاح",
     "fail": "خطأ أثناء تنفيذ طلبك",
-    "home": "الرئيسية"
+    "home": "الرئيسية",
+    "create": "إضافة",
+    "gender": "النوع",
+    "age": "السن",
+    "nationality": "الجنسية",
+    "countryOfPlace": "بلد الإقامة",
+    "governorate": "المحافظه",
+    "bodyShape": "شكل الجسم",
+    "weight": "الوزن",
+    "length": "الطول",
+    "eyeColor": "لون العينين",
+    "hairColor": "لون الشعر",
+    "skinColor": "لون البشره"
 }

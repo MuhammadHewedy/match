@@ -1,1 +1,50 @@
-Mgmt
+<h3>
+    <a href="#/applicants/create">
+        {{'create' | translate}}
+    </a>
+</h3>
+
+<div class="col-lg-12">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th translate>gender</th>
+                            <th translate>age</th>
+                            <th translate>nationality</th>
+                            <th translate>countryOfPlace</th>
+                            <th translate>governorate</th>
+                            <th translate>bodyShape</th>
+                            <th translate>weight</th>
+                            <th translate>length</th>
+                            <th translate>eyeColor</th>
+                            <th translate>hairColor</th>
+                            <th translate>skinColor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in list">
+                            <td>{{item.gender}}</td>
+                            <td>{{item.age}}</td>
+                            <td>{{item.nationality}}</td>
+                            <td>{{item.countryOfPlace}}</td>
+                            <td>{{item.governorate}}</td>
+                            <td>{{item.bodyShape}}</td>
+                            <td>{{item.weight}}</td>
+                            <td>{{item.length}}</td>
+                            <td>{{item.eyeColor}}</td>
+                            <td>{{item.hairColor}}</td>
+                            <td>{{item.skinColor}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.table-responsive -->
+        </div>
+        <!-- /.panel-body -->
+    </div>
+    <!-- /.panel -->
+</div>
+<!-- /.col-lg-6 -->

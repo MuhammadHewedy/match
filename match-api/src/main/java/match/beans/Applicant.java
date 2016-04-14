@@ -23,7 +23,7 @@ public class Applicant extends BaseEntity implements Serializable {
 	private String governorate;
 	private String bodyShape;
 	private Double weight;
-	private Double lenght;
+	private Double length;
 	private String eyeColor;
 	private String hairColor;
 	private String skinColor;
