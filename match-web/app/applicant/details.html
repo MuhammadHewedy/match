@@ -197,7 +197,7 @@
 
         <div class="form-group col-md-6">
             <label translate>phoneNumber</label>
-            <input type="number" class="form-control" ng-model="item.phoneNumber" name="phoneNumber" placeholder="{{'phoneNumber' | translate}}">
+            <input type="text" class="form-control" ng-model="item.phoneNumber" name="phoneNumber" placeholder="{{'phoneNumber' | translate}}">
         </div>
     </div>
 
@@ -205,7 +205,7 @@
         <div class="form-group col-md-6">
             <label translate>fatherPhoneNumber</label>
             *
-            <input type="number" class="form-control" ng-model="item.fatherPhoneNumber" name="fatherPhoneNumber" placeholder="{{'fatherPhoneNumber' | translate}}" required>
+            <input type="text" class="form-control" ng-model="item.fatherPhoneNumber" name="fatherPhoneNumber" placeholder="{{'fatherPhoneNumber' | translate}}" required>
             <div ng-messages="form.fatherPhoneNumber.$error" ng-if="form.fatherPhoneNumber.$dirty" class="has-error">
                 <div class="help-block" ng-message="required">{{'field.required' | translate}}</div>
             </div>

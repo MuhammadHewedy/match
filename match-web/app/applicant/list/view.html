@@ -5,8 +5,8 @@
 </h3>
 
 <uib-accordion>
-    <uib-accordion-group heading="{{'filters' | translate}}" is-open="status.isFirstOpen">
-        <div ng-include="'applicant/filter/view.html'"/>
+    <uib-accordion-group heading="{{'filters' | translate}}">
+        <div ng-include="'applicant/filter/view.html'" ng-controller="FilterApplicantCtrl"/>
     </uib-accordion-group>
 </uib-accordion>
 
