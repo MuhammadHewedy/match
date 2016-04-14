@@ -7,14 +7,16 @@
 
 body {
   font-family: A_Nefel_Botan;
+  font-size: 16px;
 }
 
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
   margin-bottom: 2em;
-  padding: 0 0 0.5em;
+  padding: 0.5em .5em .5em.5em;
   font-size: 20px;
+  text-align: center;
 }
 
 .menu:before {
