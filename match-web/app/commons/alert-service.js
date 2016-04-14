@@ -13,7 +13,7 @@ angular.module('myApp')
             }
             $rootScope.alerts = [];
             $rootScope.alerts.push(alert);
-            autoHide(timeMillis ? timeMillis : 500)
+            autoHide(timeMillis ? timeMillis : 1000)
         },
         error: function(msg, link, timeMillis) {
             var alert = {
