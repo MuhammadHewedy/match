@@ -4,7 +4,8 @@
 
     <div class="row">
         <div class="form-group col-md-6">
-            <label translate>username</label> *
+            <label translate>username</label>
+            *
             <input type="text" class="form-control" ng-model="item.user.username" name="username" placeholder="{{'username' | translate}}" required ng-disabled="type == 'update'">
             <div ng-messages="form.username.$error" ng-if="form.username.$dirty" class="has-error">
                 <div class="help-block" ng-message="required">{{'field.required' | translate}}</div>
@@ -12,7 +13,8 @@
         </div>
 
         <div class="form-group col-md-6" ng-if="type == 'create'">
-            <label translate>password</label> *
+            <label translate>password</label>
+            *
             <input type="text" class="form-control" ng-model="item.user.password" name="password" placeholder="{{'password' | translate}}" required>
             <div ng-messages="form.password.$error" ng-if="form.password.$dirty" class="has-error">
                 <div class="help-block" ng-message="required">{{'field.required' | translate}}</div>
@@ -22,7 +24,8 @@
 
     <div class="row">
         <div class="form-group col-md-6">
-            <label translate>gender</label> *
+            <label translate>gender</label>
+            *
             <select class="form-control" ng-model="item.gender" name="gender" required>
                 <option value="m">
                     {{'gender.m' | translate}}
@@ -37,7 +40,8 @@
         </div>
 
         <div class="form-group col-md-6">
-            <label translate>age</label> *
+            <label translate>age</label>
+            *
             <input type="number" class="form-control" ng-model="item.age" name="age" placeholder="{{'age' | translate}}" required>
             <div ng-messages="form.age.$error" ng-if="form.age.$dirty" class="has-error">
                 <div class="help-block" ng-message="required">{{'field.required' | translate}}</div>
@@ -47,7 +51,8 @@
 
     <div class="row">
         <div class="form-group col-md-6">
-            <label translate>nationality</label> *
+            <label translate>nationality</label>
+            *
             <select class="form-control" ng-model="item.nationality" name="nationality" required>
                 <option ng-repeat="country in lookups.countries | orderBy:country" value="{{country}}">{{country}}</option>
             </select>
@@ -57,7 +62,8 @@
         </div>
 
         <div class="form-group col-md-6">
-            <label translate>countryOfPlace</label> *
+            <label translate>countryOfPlace</label>
+            *
             <select class="form-control" ng-model="item.countryOfPlace" name="countryOfPlace" required>
                 <option ng-repeat="country in lookups.countries | orderBy:country" value="{{country}}">{{country}}</option>
             </select>
@@ -81,7 +87,8 @@
 
     <div class="row">
         <div class="form-group col-md-6">
-            <label translate>weight</label> *
+            <label translate>weight</label>
+            *
             <input type="number" class="form-control" ng-model="item.weight" name="weight" placeholder="{{'weight' | translate}}" required>
             <div ng-messages="form.weight.$error" ng-if="form.weight.$dirty" class="has-error">
                 <div class="help-block" ng-message="required">{{'field.required' | translate}}</div>
@@ -89,14 +96,14 @@
         </div>
 
         <div class="form-group col-md-6">
-            <label translate>length</label> *
+            <label translate>length</label>
+            *
             <input type="number" class="form-control" ng-model="item.length" name="length" placeholder="{{'length' | translate}}" required>
             <div ng-messages="form.length.$error" ng-if="form.length.$dirty" class="has-error">
                 <div class="help-block" ng-message="required">{{'field.required' | translate}}</div>
             </div>
         </div>
     </div>
-
 
     <div class="row">
         <div class="form-group col-md-6">
@@ -136,7 +143,8 @@
 
     <div class="row">
         <div class="form-group col-md-6">
-            <label translate>religion</label> *
+            <label translate>religion</label>
+            *
             <select class="form-control" ng-model="item.religion" name="religion" required>
                 <option ng-repeat="religion in lookups.religion" value="{{religion}}">{{religion}}</option>
             </select>
@@ -146,7 +154,8 @@
         </div>
 
         <div class="form-group col-md-6">
-            <label translate>maritalStatus</label> *
+            <label translate>maritalStatus</label>
+            *
             <select class="form-control" ng-model="item.maritalStatus" name="maritalStatus" required>
                 <option ng-repeat="maritalStatus in lookups.maritalStatus" value="{{maritalStatus}}">{{maritalStatus}}</option>
             </select>
@@ -156,27 +165,69 @@
         </div>
     </div>
 
-    <div class="row"></div>
+    <div class="row">
+        <div class="form-group col-md-6">
+            <label translate>monthlyIncome</label>
+            <input type="number" class="form-control" ng-model="item.monthlyIncome" name="monthlyIncome" placeholder="{{'monthlyIncome' | translate}}">
+        </div>
 
-    <div class="row"></div>
+        <div class="form-group col-md-6">
+            <label translate>religionLevel</label>
+            <input type="text" class="form-control" ng-model="item.religionLevel" name="religionLevel" placeholder="{{'religionLevel' | translate}}">
+        </div>
+    </div>
 
-    <div class="row"></div>
+    <div class="row">
+        <div class="form-group col-md-6">
+            <label translate>socialLevel</label>
+            <input type="text" class="form-control" ng-model="item.socialLevel" name="socialLevel" placeholder="{{'socialLevel' | translate}}">
+        </div>
 
-    <div class="row"></div>
+        <div class="form-group col-md-6">
+            <label translate>about</label>
+            <textarea class="form-control" ng-model="item.about" name="about" placeholder="{{'about' | translate}}"/>
+        </div>
+    </div>
 
-    <div class="row"></div>
+    <div class="row">
+        <div class="form-group col-md-6">
+            <label translate>partenerCharcs</label>
+            <input type="text" class="form-control" ng-model="item.partenerCharcs" name="partenerCharcs" placeholder="{{'partenerCharcs' | translate}}">
+        </div>
 
-    <div class="row"></div>
+        <div class="form-group col-md-6">
+            <label translate>phoneNumber</label>
+            <input type="number" class="form-control" ng-model="item.phoneNumber" name="phoneNumber" placeholder="{{'phoneNumber' | translate}}">
+        </div>
+    </div>
 
-    <div class="row"></div>
+    <div class="row">
+        <div class="form-group col-md-6">
+            <label translate>fatherPhoneNumber</label>
+            *
+            <input type="number" class="form-control" ng-model="item.fatherPhoneNumber" name="fatherPhoneNumber" placeholder="{{'fatherPhoneNumber' | translate}}" required>
+            <div ng-messages="form.fatherPhoneNumber.$error" ng-if="form.fatherPhoneNumber.$dirty" class="has-error">
+                <div class="help-block" ng-message="required">{{'field.required' | translate}}</div>
+            </div>
+        </div>
 
-    <div class="row"></div>
+        <div class="form-group col-md-6">
+            <label translate>hijab</label>
+            <input type="checkbox" ng-model="item.hijab" name="hijab" placeholder="{{'hijab' | translate}}">
+        </div>
+    </div>
 
-    <div class="row"></div>
+    <div class="row">
+        <div class="form-group col-md-6">
+            <label translate>haveKids</label>
+            <input type="checkbox" ng-model="item.haveKids" name="haveKids" placeholder="{{'haveKids' | translate}}">
+        </div>
 
-    <div class="row"></div>
-
-    <div class="row"></div>
+        <div class="form-group col-md-6">
+            <label translate>likeToHaveKids</label>
+            <input type="checkbox" ng-model="item.likeToHaveKids" name="likeToHaveKids" placeholder="{{'likeToHaveKids' | translate}}">
+        </div>
+    </div>
 
     <div class="row">
         <button type="button" class="btn btn-primary" ng-click="form.$valid && save()" ng-disabled="form.$invalid" translate>{{type | translate}}</button>

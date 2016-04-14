@@ -28,15 +28,15 @@
     "religion": "الديانه",
     "maritalStatus": "الحالة الاجتماعيه",
     "haveKids": "يوجد اطفال",
-    "likeToHaveKids": "ترغب في انجاب الاطفاب",
+    "likeToHaveKids": "يرغب في انجاب الاطفاب",
     "monthlyIncome": "الدخل الشهري",
     "religionLevel": "مستوي التدين",
-    "hijab": "الحجاب",
+    "hijab": "ترتدي الحجاب",
     "socialLevel": "المستوي الاجتماعي",
     "about": "نبذه",
     "partenerCharcs": "مواصفات شريك الحياة",
-    "phoneNumber": "الرقم الشخصي",
-    "fatherPhoneNumber": "رقم ولي الامر",
+    "phoneNumber": "الهاتف الشخصي",
+    "fatherPhoneNumber": "هاتف ولي الأمر",
     "idImagePath": "صورة اثبات شخصية",
     "field.required": "الحقل مطلوب",
     "cancel": "إلغاء",
@@ -48,5 +48,7 @@
     "first_text": "الأول",
     "last_text": "الأخير",
     "next_text": "التالي",
-    "previous_text": "السابق"
+    "previous_text": "السابق",
+    "true": "نعم",
+    "false": "لا"
 }
