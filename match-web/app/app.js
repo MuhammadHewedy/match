@@ -28,10 +28,10 @@ config(['$routeProvider', '$httpProvider', '$translateProvider', function($route
 
         if (next.$$route) {
             if (!curr) { //on page reload
-                authenticateOnServer(LoginService, $rootScope, $location);
+                authenticateOnServer(LoginService, $rootScope, $location, next);
             } else {
                 if ($rootScope.user) {
-                    if (next.$$route.originalPath == '/login') {
+                    if (next.$route == '/login') {
                         $location.path('/')
                     }
                 } else {
@@ -42,12 +42,13 @@ config(['$routeProvider', '$httpProvider', '$translateProvider', function($route
     });
 }]);
 
-function authenticateOnServer(LoginService, $rootScope, $location) {
+function authenticateOnServer(LoginService, $rootScope, $location, next) {
     LoginService.login().then(
         function(user) {
             if (user) {
                 $rootScope.user = user;
-                $location.path('/')
+                console.log(next);
+                $location.path(next.$route)
                 console.log('authenticated: ', user);
             } else {
                 $rootScope.user = null

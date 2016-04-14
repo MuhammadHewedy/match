@@ -7,7 +7,7 @@ angular.module('myApp')
     $scope.userMenu = []
 
     angular.forEach(MenuService, function(item) {
-        if (item.role.indexOf($rootScope.user.role) >= 0) {
+        if (!item.role || item.role.indexOf($rootScope.user.role) >= 0) {
             $scope.userMenu.push(item)
         }
     });

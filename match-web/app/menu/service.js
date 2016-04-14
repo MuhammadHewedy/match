@@ -3,6 +3,9 @@
 angular.module('myApp')
 
 .value('MenuService', [{
+    title: 'home',
+    link: '/home'
+}, {
     title: 'manage_admin',
     role: ['ROLE_SUPER_ADMIN'],
     link: '/admins'
