@@ -11,7 +11,11 @@ angular.module('myApp')
 
 .controller('ListApplicantCtrl', ['$scope', 'Applicant', '$location', '$routeParams', function($scope, Applicant, $location, $routeParams) {
 
+    $scope.item = {}
+
     $scope.getData = function() {
+        console.log($scope.item);
+
         Applicant.query({
             page: $scope.currentPage - 1
         }, function(list) {
