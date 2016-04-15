@@ -8,6 +8,9 @@ body {
     font-family: A_Nefel_Botan;
     font-size: 16px;
 }
+.number-font{
+  font-size: 14px;
+}
 .menu {
     list-style: none;
     border-bottom: 0.1em solid black;
