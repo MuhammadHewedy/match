@@ -225,21 +225,21 @@
                             </div>
                         </div>
 
-                        <div class="form-group col-md-6">
-                            <label translate>hijab</label>
-                            <input type="checkbox" ng-model="item.hijab" name="hijab" placeholder="{{'hijab' | translate}}">
-                        </div>
                     </div>
 
                     <div class="row">
-                        <div class="form-group col-md-6">
+                      <div class="form-group col-md-4">
+                          <label translate>hijab</label>
+                          <input bs-switch type="checkbox" ng-model="item.hijab" name="hijab" >
+                      </div>
+                        <div class="form-group col-md-4">
                             <label translate>haveKids</label>
-                            <input type="checkbox" ng-model="item.haveKids" name="haveKids" placeholder="{{'haveKids' | translate}}">
+                            <input bs-switch type="checkbox" ng-model="item.haveKids" name="haveKids" >
                         </div>
 
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-4">
                             <label translate>likeToHaveKids</label>
-                            <input type="checkbox" ng-model="item.likeToHaveKids" name="likeToHaveKids" placeholder="{{'likeToHaveKids' | translate}}">
+                            <input bs-switch type="checkbox" ng-model="item.likeToHaveKids" name="likeToHaveKids" >
                         </div>
                     </div>
 
