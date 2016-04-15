@@ -6,7 +6,7 @@
         <div class="form-group col-md-6">
             <label translate>username</label>
             *
-            <input type="text" class="form-control" ng-model="item.user.username" name="username" placeholder="{{'username' | translate}}" required unique="user.username" ng-disabled="type == 'update'">
+            <input type="text" class="form-control" ng-model="item.user.username" name="username" placeholder="{{'username' | translate}}" required unique="user.username" uniqueId="{{item.user.id}}" ng-disabled="type == 'update'">
             <div ng-messages="form.username.$error" ng-if="form.username.$dirty" class="has-error">
                 <div class="help-block" ng-message="required">{{'field.required' | translate}}</div>
                 <div class="help-block" ng-message="unique">{{'field.duplicate' | translate}}</div>

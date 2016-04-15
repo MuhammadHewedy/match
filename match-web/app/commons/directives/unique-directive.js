@@ -43,7 +43,7 @@ angular.module('myApp').directive('unique', ['$http', function($http) {
                     ngModelValue = attrs.ngModel;
                 }
 
-                var idValue = attrs.uniqueId;
+                var idValue = attrs.uniqueid; // why uniqueId is sent here as uniqueid ???
                 if (!idValue) {
                     var obj = scope[ngModelValue.split('.')[0]];
                     if (obj) {

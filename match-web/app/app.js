@@ -46,9 +46,8 @@ function authenticateOnServer(LoginService, $rootScope, $location, next) {
         function(user) {
             if (user) {
                 $rootScope.user = user;
-                console.log(next);
                 $location.path(next.$route)
-                console.log('authenticated: ', user);
+                console.log('authenticated: ', user.username);
             } else {
                 $rootScope.user = null
                 $location.path('/login')
