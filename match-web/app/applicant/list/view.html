@@ -44,7 +44,9 @@
                 </tr>
             </tbody>
         </table>
+        <div ng-show="list.content.length == 0" translate> no_data_found</div>
         <uib-pagination
+            ng-show="list.content.length > 0"
             total-items="list.totalElements"
             ng-model="currentPage"
             ng-change="getData()"

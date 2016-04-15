@@ -51,5 +51,6 @@
     "previous_text": "السابق",
     "true": "نعم",
     "false": "لا",
-    "search": "البحث"
+    "search": "البحث",
+    "no_data_found": "لا توجد بيانات"
 }
