@@ -48,6 +48,7 @@
         <uib-pagination
             ng-show="list.content.length > 0"
             total-items="list.totalElements"
+            items-per-page="list.size"
             ng-model="currentPage"
             ng-change="getData()"
             first-text="{{'first_text' | translate}}"
