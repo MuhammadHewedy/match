@@ -52,5 +52,6 @@
     "true": "نعم",
     "false": "لا",
     "search": "البحث",
-    "no_data_found": "لا توجد بيانات"
+    "no_data_found": "لا توجد بيانات",
+    "field.duplicate": "هذه القيمة موجودة من قبل"
 }
