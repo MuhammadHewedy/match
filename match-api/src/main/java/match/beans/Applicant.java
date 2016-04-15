@@ -10,10 +10,12 @@ import javax.validation.constraints.NotNull;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 @Data
 @Entity
-@EqualsAndHashCode(callSuper = false)
+@EqualsAndHashCode(callSuper = false, exclude = {"user"})
+@ToString(exclude = {"user"})
 public class Applicant extends BaseEntity implements Serializable {
 	private static final long serialVersionUID = -7696991411016302499L;
 	

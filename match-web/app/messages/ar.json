@@ -57,5 +57,8 @@
     "baisc_user_info": "بيانات المستخدم",
     "applicant_info": "بيانات الطلب",
     "baisc_user_info_tooltip": "سيتم إنشاء مستخدم للموقع بهذه المعلومات",
-    "applicant_info_tooltip": "بيانات الطلب الرئيسية"
+    "applicant_info_tooltip": "بيانات الطلب الرئيسية",
+    "enabled": "مفعل",
+    "create.admin": "إضافة مدير نظام",
+    "update.admin": "تعديل مدير نظام"
 }
