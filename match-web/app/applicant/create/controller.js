@@ -9,16 +9,17 @@ angular.module('myApp')
     });
 }])
 
-.controller('CreateApplicantCtrl', ['$scope', 'Applicant', 'AlertService', 'LookupService', function($scope, Applicant, AlertService, LookupService) {
+.controller('CreateApplicantCtrl', ['$scope', '$location', 'Applicant', 'AlertService', 'LookupService', function($scope, $location, Applicant, AlertService, LookupService) {
 
     $scope.type = 'create'
 
     $scope.item = new Applicant();
     $scope.save = function() {
         $scope.item.$save(function() {
+            $location.path('/applicants');
             AlertService.success();
-            $scope.item = new Applicant();
-            $scope.form.$setPristine();
+            // $scope.item = new Applicant();
+            // $scope.form.$setPristine();
         }, function(error) {
             AlertService.error(error.data.message);
         })

@@ -30,7 +30,9 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 <div class="container">
+
     <div id="alert" class="alert alert-{{alert.type}} alert-dismissable" ng-repeat="alert in alerts">
+        <div style="overflow: visible" id="alert.{{alert.id}}"></div>
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
         {{alert.message | translate}}
         <a href="{{alert.link}}" target="_blank" class="alert-link" ng-show="alert.link">More</a>.
