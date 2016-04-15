@@ -44,3 +44,9 @@ table > thead > tr {
 .main-view{
   margin-bottom: 4em;
 }
+
+.ui-tooltip{
+  font-size: 16px;
+  font-family: A_Nefel_Botan;
+  left: 4000px;
+}

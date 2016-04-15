@@ -53,5 +53,9 @@
     "false": "لا",
     "search": "البحث",
     "no_data_found": "لا توجد بيانات",
-    "field.duplicate": "هذه القيمة موجودة من قبل"
+    "field.duplicate": "هذه القيمة موجودة من قبل",
+    "baisc_user_info": "بيانات المستخدم",
+    "applicant_info": "بيانات الطلب",
+    "baisc_user_info_tooltip": "سيتم إنشاء مستخدم للموقع بهذه المعلومات",
+    "applicant_info_tooltip": "بيانات الطلب الرئيسية"
 }
