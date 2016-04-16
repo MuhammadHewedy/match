@@ -1,9 +1,6 @@
 #!/bin/bash
 
-export JAVA_HOME=/etc/alternatives/java_sdk_1.8.0
-export PATH=$JAVA_HOME/bin:$PATH
-
-echo $JAVA_HOME
+alias java='/etc/alternatives/java_sdk_1.8.0/bin/java'
 java -version
 
 cd $OPENSHIFT_REPO_DIR
