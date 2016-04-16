@@ -3,4 +3,3 @@
 # script. The application will work only if it binds to
 # $OPENSHIFT_DIY_IP:8080
 nohup java -jar match-api/target/*.jar -Dspring.profiles.active=openshift --server.port=${OPENSHIFT_DIY_PORT} --server.address=${OPENSHIFT_DIY_IP} &
-
