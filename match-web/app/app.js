@@ -2,7 +2,7 @@
 
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
-    'ngRoute', 'ui.bootstrap', 'pascalprecht.translate', 'ngResource', 'ngMessages', 'frapontillo.bootstrap-switch'
+    'ngRoute', 'ui.bootstrap', 'pascalprecht.translate', 'ngResource', 'ngMessages', 'frapontillo.bootstrap-switch', 'angular-loading-bar', 'ngAnimate'
 ]).
 config(['$routeProvider', '$httpProvider', '$translateProvider', function($routeProvider, $httpProvider, $translateProvider) {
 
