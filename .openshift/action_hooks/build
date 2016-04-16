@@ -1,6 +1,8 @@
 #!/bin/bash
 
+alias javac='/etc/alternatives/java_sdk_1.8.0/bin/javac'
 alias java='/etc/alternatives/java_sdk_1.8.0/bin/java'
+javac -version
 java -version
 
 cd $OPENSHIFT_REPO_DIR
