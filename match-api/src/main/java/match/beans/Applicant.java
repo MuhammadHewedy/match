@@ -4,8 +4,12 @@ import java.io.Serializable;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 import javax.validation.constraints.NotNull;
 
 import lombok.Data;
@@ -18,6 +22,11 @@ import lombok.ToString;
 @ToString(exclude = {"user"})
 public class Applicant extends BaseEntity implements Serializable {
 	private static final long serialVersionUID = -7696991411016302499L;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "applicant_seq_gen")
+	@SequenceGenerator(name = "applicant_seq_gen", sequenceName = "applicant_id_seq")
+	protected Long id;
 	
 	private String gender;
 	private Short age;

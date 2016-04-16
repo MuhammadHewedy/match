@@ -61,5 +61,7 @@
     "applicant_info_tooltip": "بيانات الطلب الرئيسية",
     "enabled": "مفعل",
     "create.admin": "إضافة مدير نظام",
-    "update.admin": "تعديل مدير نظام"
+    "update.admin": "تعديل مدير نظام",
+    "field.pattern.english": "",
+    "field.pattern.english.special": ""
 }

@@ -7,7 +7,12 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.security.core.GrantedAuthority;
@@ -23,10 +28,16 @@ import lombok.EqualsAndHashCode;
 
 @Data
 @Entity
+@Table(name = "`user`")
 @EqualsAndHashCode(callSuper = false)
 public class User extends BaseEntity implements UserDetails {
 
 	private static final long serialVersionUID = -2019049247658306718L;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_seq_gen")
+	@SequenceGenerator(name = "user_seq_gen", sequenceName = "user_id_seq")
+	protected Long id;
 
 	@NotNull
 	@Column(updatable = false, unique = true)

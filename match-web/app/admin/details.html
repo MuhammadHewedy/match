@@ -13,19 +13,31 @@
                         <div class="form-group col-md-6">
                             <label translate>username</label>
                             *
-                            <input type="text" class="form-control" ng-model="item.username" name="username" placeholder="{{'username' | translate}}" required unique="user.username" uniqueId="{{item.id}}" ng-disabled="type == 'update'">
+                            <input
+                                type="text"
+                                class="form-control"
+                                ng-model="item.username"
+                                name="username"
+                                placeholder="{{'username' | translate}}"
+                                required
+                                unique="user.username"
+                                uniqueId="{{type == 'update' ? item.id : -1}}"
+                                ng-disabled="type == 'update'"
+                                ng-pattern="/^[A-Za-z0-9_.-]*$/">
                             <div ng-messages="form.username.$error" ng-if="form.username.$dirty" class="has-error">
                                 <div class="help-block" ng-message="required">{{'field.required' | translate}}</div>
                                 <div class="help-block" ng-message="unique">{{'field.duplicate' | translate}}</div>
+                                <div class="help-block" ng-message="pattern">{{'field.pattern.english' | translate}}</div>
                             </div>
                         </div>
 
                         <div class="form-group col-md-6" ng-if="type == 'create'">
                             <label translate>password</label>
                             *
-                            <input type="text" class="form-control" ng-model="item.password" name="password" placeholder="{{'password' | translate}}" required>
+                            <input type="text" class="form-control" ng-model="item.password" name="password" placeholder="{{'password' | translate}}" required ng-pattern="/^[$&+,:;=?@#|'<>.^*()%!-]*$/">
                             <div ng-messages="form.password.$error" ng-if="form.password.$dirty" class="has-error">
                                 <div class="help-block" ng-message="required">{{'field.required' | translate}}</div>
+                                <div class="help-block" ng-message="pattern">{{'field.pattern.english.special' | translate}}</div>
                             </div>
                         </div>
                     </div>

@@ -5,9 +5,6 @@ import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.EntityListeners;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
 import org.springframework.data.annotation.CreatedBy;
@@ -24,10 +21,6 @@ import lombok.Data;
 public class BaseEntity implements Serializable {
 
 	private static final long serialVersionUID = 2312273746404798333L;
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	protected Long id;
 
 	@CreatedBy
 	@Column(updatable = false)
