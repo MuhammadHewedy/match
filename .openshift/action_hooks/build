@@ -1,9 +1,4 @@
 #!/bin/bash
 
-alias javac='/etc/alternatives/java_sdk_1.8.0/bin/javac'
-alias java='/etc/alternatives/java_sdk_1.8.0/bin/java'
-javac -version
-java -version
-
 cd $OPENSHIFT_REPO_DIR
-cd match-api; mvn clean package -DskipTests=true -Dmaven.repo.local=$OPENSHIFT_DIY_DIR/.m2; cd ../
+cd match-api; /usr/share/java/apache-maven-3.0.4/bin/mvn clean package -DskipTests=true -Dmaven.repo.local=$OPENSHIFT_DIY_DIR/.m2; cd ../
