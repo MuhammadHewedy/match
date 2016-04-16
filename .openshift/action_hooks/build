@@ -1,3 +1,3 @@
 #!/bin/bash
 cd $OPENSHIFT_REPO_DIR
-cd match-api; mvn clean package -s .openshift/settings.xml -DskipTests=true; cd ../
+cd match-api; mvn clean package -DskipTests=true; cd ../
