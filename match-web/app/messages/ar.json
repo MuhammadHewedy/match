@@ -62,6 +62,6 @@
     "enabled": "مفعل",
     "create.admin": "إضافة مدير نظام",
     "update.admin": "تعديل مدير نظام",
-    "field.pattern.english": "",
-    "field.pattern.english.special": ""
+    "field.pattern.english": "مسموح فقط بالأحرف و الأرقام الإنجليزية و '_' و '.'",
+    "field.pattern.english.special": "مسموح فقط بالأحرف  و الأرقام الإنجليزية و الأحرف الخاصة"
 }
