@@ -6,4 +6,4 @@ export JAVACMD=$JAVA_HOME/bin/java
 export M2_HOME=/usr/share/java/apache-maven-3.0.4
 
 cd $OPENSHIFT_REPO_DIR
-cd match-api; $$M2_HOME/bin/mvn clean package -DskipTests=true -Dmaven.repo.local=$OPENSHIFT_DIY_DIR/.m2; cd ../
+cd match-api; $M2_HOME/bin/mvn clean package -DskipTests=true -Dmaven.repo.local=$OPENSHIFT_DIY_DIR/.m2; cd ../
