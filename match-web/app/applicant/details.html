@@ -34,7 +34,7 @@
                         <div class="form-group col-md-6" ng-if="type == 'create'">
                             <label translate>password</label>
                             *
-                            <input type="text" class="form-control" ng-model="item.user.password" name="password" placeholder="{{'password' | translate}}" required ng-pattern="/^[$&+,:;=?@#|'<>.^*()%!-]*$/">
+                            <input type="text" class="form-control" ng-model="item.user.password" name="password" placeholder="{{'password' | translate}}" required ng-pattern="/^[A-Za-z0-9_$&+,:;=?@#|'<>.^*()%!-]*$/">
                             <div ng-messages="form.password.$error" ng-if="form.password.$dirty" class="has-error">
                                 <div class="help-block" ng-message="required">{{'field.required' | translate}}</div>
                                 <div class="help-block" ng-message="pattern">{{'field.pattern.english.special' | translate}}</div>
