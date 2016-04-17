@@ -60,3 +60,7 @@ table > tbody > tr > td {
 .login{
   margin-top: 20%;
 }
+
+.view-label{
+    color: #B5B4B4;
+}

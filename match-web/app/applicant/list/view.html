@@ -31,7 +31,7 @@
         </thead>
         <tbody>
             <tr ng-repeat="item in list.content">
-                <td>{{item.id}}</td>
+                <td><a href="#/applicants/view/{{item.id}}">{{item.id}}</a></td>
                 <td>{{'gender.' + item.gender  | translate}}</td>
                 <td class="number-font">{{item.age}}</td>
                 <td>{{item.nationality}}</td>

@@ -18,6 +18,17 @@ angular.module('myApp')
         _id: $routeParams.id
     }, function(item) {
         $scope.item = item;
+
+        if ($scope.item.hijab == null) {
+            $scope.item.hijab = undefined
+        }
+        if ($scope.item.haveKids == null) {
+            $scope.item.haveKids = undefined
+        }
+
+        if ($scope.item.likeToHaveKids == null) {
+            $scope.item.likeToHaveKids = undefined
+        }
     })
 
     // -- update
