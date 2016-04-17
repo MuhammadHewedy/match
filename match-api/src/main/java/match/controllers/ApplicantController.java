@@ -61,4 +61,10 @@ public class ApplicantController extends CrudController<Applicant, ApplicantRepo
 	public ResponseEntity<Page<Applicant>> query(Predicate predicate, @PageableDefault(size = 15) Pageable pageable) {
 		return super.query(QApplicant.applicant.user.role.eq(Role.ROLE_APPLICANT).and(predicate), pageable);
 	}
+	
+	@Override
+	@RequestMapping(method = RequestMethod.DELETE, path = "/{id}")
+	public ResponseEntity<Void> delete(@PathVariable("id") Long id) {
+		return super.delete(id);
+	}
 }

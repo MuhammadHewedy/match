@@ -44,6 +44,10 @@ table > thead > tr {
     color: #ffffff;
 }
 
+table > tbody > tr > td {
+    vertical-align: middle !important;
+}
+
 .main-view{
   margin-bottom: 4em;
 }

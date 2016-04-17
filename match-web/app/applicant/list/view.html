@@ -26,6 +26,7 @@
                 <th translate>maritalStatus</th>
                 <th translate>haveKids</th>
                 <th translate>update</th>
+                <th translate>delete</th>
             </tr>
         </thead>
         <tbody>
@@ -43,8 +44,11 @@
                 <td>{{item.haveKids | translate}}</td>
                 <td>
                     <a href="#/applicants/edit/{{item.id}}" translate>update<a/></td>
-                </tr>
-            </tbody>
+                <td>
+                    <button type="button" class="btn btn-danger" ng-click="delete(item)"><i class="fa fa-times"></i></button>
+                </td>
+              </tr>
+          </tbody>
         </table>
         <div ng-show="list.content.length == 0" translate> no_data_found</div>
         <uib-pagination

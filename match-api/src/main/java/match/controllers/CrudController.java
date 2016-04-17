@@ -31,4 +31,9 @@ public abstract class CrudController<T extends BaseEntity, R extends CrudReposit
 	public ResponseEntity<Page<T>> query(Predicate predicate, Pageable pageable) {
 		return ResponseEntity.ok(getRepository().findAll(predicate, pageable));
 	}
+	
+	public ResponseEntity<Void> delete(Long id) {
+		getRepository().delete(id);
+		return ResponseEntity.ok().build();
+	}
 }

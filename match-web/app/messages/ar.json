@@ -64,5 +64,8 @@
     "create.admin": "إضافة مدير نظام",
     "update.admin": "تعديل مدير نظام",
     "field.pattern.english": "مسموح فقط بالأحرف و الأرقام الإنجليزية و '_' و '.'",
-    "field.pattern.english.special": "مسموح فقط بالأحرف  و الأرقام الإنجليزية و الأحرف الخاصة"
+    "field.pattern.english.special": "مسموح فقط بالأحرف  و الأرقام الإنجليزية و الأحرف الخاصة",
+    "delete": "حذف",
+    "confirm_delete_applicant" : "هل أنت متأكد من حذف الطلب بالرقم التسلسلي ",
+    "q_mark" : "؟"
 }
