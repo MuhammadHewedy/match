@@ -55,6 +55,8 @@ public class Applicant extends BaseEntity implements Serializable {
 	private String phoneNumber;
 	private String fatherPhoneNumber;
 	private String idImagePath;
+	private String fbAccount;
+	private String twtAccount;
 
 	@NotNull
 	@OneToOne(cascade = CascadeType.ALL)

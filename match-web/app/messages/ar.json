@@ -67,5 +67,7 @@
     "field.pattern.english.special": "مسموح فقط بالأحرف  و الأرقام الإنجليزية و الأحرف الخاصة",
     "delete": "حذف",
     "confirm_delete_applicant" : "هل أنت متأكد من حذف الطلب بالرقم التسلسلي ",
-    "q_mark" : "؟"
+    "q_mark" : "؟",
+    "fbAccount" : "حساب الفيس بوك",
+    "twtAccount" : "حساب تويتر"
 }

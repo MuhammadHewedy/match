@@ -30,6 +30,6 @@ angular.module('myApp')
         })
     };
 
-    $scope.lookups = LookupService;;
+    $scope.lookups = LookupService;
 
 }]);
