@@ -18,6 +18,7 @@ config(['$routeProvider', '$httpProvider', '$translateProvider', function($route
     $translateProvider.useSanitizeValueStrategy('escape');
 
     $httpProvider.defaults.headers.common['Accept-Language'] = 'ar';
+    $httpProvider.interceptors.push('authHttpResponseInterceptor');
 
 }]).run(['$rootScope', '$location', 'LoginService', 'AlertService', function($rootScope, $location, LoginService, AlertService) {
 
@@ -39,6 +40,17 @@ config(['$routeProvider', '$httpProvider', '$translateProvider', function($route
             }
         }
     });
+}]).factory('authHttpResponseInterceptor', ['$q', '$location', '$rootScope', function($q, $location, $rootScope) {
+    return {
+        responseError: function(rejection) {
+            if (rejection.status === 401 && $location.$$path != '/login') {
+                console.log("Response Error 401", rejection);
+                $rootScope.user = null
+                $location.path('/login')
+            }
+            return $q.reject(rejection);
+        }
+    }
 }]);
 
 function authenticateOnServer(LoginService, $rootScope, $location, next) {
