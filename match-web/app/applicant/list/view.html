@@ -14,6 +14,7 @@
     <table class="table table-striped table-responsive">
         <thead>
             <tr>
+                <th translate>id</th>
                 <th translate>gender</th>
                 <th translate>age</th>
                 <th translate>nationality</th>
@@ -29,6 +30,7 @@
         </thead>
         <tbody>
             <tr ng-repeat="item in list.content">
+                <td>{{item.id}}</td>
                 <td>{{'gender.' + item.gender  | translate}}</td>
                 <td class="number-font">{{item.age}}</td>
                 <td>{{item.nationality}}</td>

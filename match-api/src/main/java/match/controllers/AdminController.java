@@ -49,9 +49,9 @@ public class AdminController extends CrudController<User, UserRepo> {
 	}
 
 	@Override
-	@RequestMapping(method = RequestMethod.PUT, path = "/{id}")
-	public ResponseEntity<Void> update(@PathVariable("id") Long id, @RequestBody @Valid User user) {
-		return super.update(id, user);
+	@RequestMapping(method = RequestMethod.PUT)
+	public ResponseEntity<Void> update(@RequestBody @Valid User user) {
+		return super.update(user);
 	}
 
 	@Override

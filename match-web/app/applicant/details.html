@@ -49,6 +49,12 @@
                 <div class="panel-body">
 
                     <div class="row">
+
+                        <div class="form-group col-md-6" ng-if="type == 'update'">
+                            <label translate>id</label>
+                            <input type="number" class="form-control" ng-model="item.id" name="id" placeholder="{{'id' | translate}}" disabled>
+                        </div>
+
                         <div class="form-group col-md-6">
                             <label translate>gender</label>
                             *
@@ -73,9 +79,7 @@
                                 <div class="help-block" ng-message="required">{{'field.required' | translate}}</div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="row">
                         <div class="form-group col-md-6">
                             <label translate>nationality</label>
                             *
@@ -97,9 +101,7 @@
                                 <div class="help-block" ng-message="required">{{'field.required' | translate}}</div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="row">
                         <div class="form-group col-md-6">
                             <label translate>governorate</label>
                             <input type="text" class="form-control" ng-model="item.governorate" name="governorate" placeholder="{{'governorate' | translate}}">
@@ -109,9 +111,7 @@
                             <label translate>bodyShape</label>
                             <input type="text" class="form-control" ng-model="item.bodyShape" name="bodyShape" placeholder="{{'bodyShape' | translate}}">
                         </div>
-                    </div>
 
-                    <div class="row">
                         <div class="form-group col-md-6">
                             <label translate>weight</label>
                             *
@@ -129,9 +129,7 @@
                                 <div class="help-block" ng-message="required">{{'field.required' | translate}}</div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="row">
                         <div class="form-group col-md-6">
                             <label translate>eyeColor</label>
                             <input type="text" class="form-control" ng-model="item.eyeColor" name="eyeColor" placeholder="{{'eyeColor' | translate}}">
@@ -141,9 +139,7 @@
                             <label translate>hairColor</label>
                             <input type="text" class="form-control" ng-model="item.hairColor" name="hairColor" placeholder="{{'hairColor' | translate}}">
                         </div>
-                    </div>
 
-                    <div class="row">
                         <div class="form-group col-md-6">
                             <label translate>skinColor</label>
                             <input type="text" class="form-control" ng-model="item.skinColor" name="skinColor" placeholder="{{'skinColor' | translate}}">
@@ -153,9 +149,7 @@
                             <label translate>secondaryLang</label>
                             <input type="text" class="form-control" ng-model="item.secondaryLang" name="secondaryLang" placeholder="{{'secondaryLang' | translate}}">
                         </div>
-                    </div>
 
-                    <div class="row">
                         <div class="form-group col-md-6">
                             <label translate>educationLevel</label>
                             <input type="text" class="form-control" ng-model="item.educationLevel" name="educationLevel" placeholder="{{'educationLevel' | translate}}">
@@ -165,9 +159,7 @@
                             <label translate>job</label>
                             <input type="text" class="form-control" ng-model="item.job" name="job" placeholder="{{'job' | translate}}">
                         </div>
-                    </div>
 
-                    <div class="row">
                         <div class="form-group col-md-6">
                             <label translate>religion</label>
                             *
@@ -189,9 +181,7 @@
                                 <div class="help-block" ng-message="required">{{'field.required' | translate}}</div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="row">
                         <div class="form-group col-md-6">
                             <label translate>monthlyIncome</label>
                             <input type="number" class="form-control" ng-model="item.monthlyIncome" name="monthlyIncome" placeholder="{{'monthlyIncome' | translate}}">
@@ -201,9 +191,7 @@
                             <label translate>religionLevel</label>
                             <input type="text" class="form-control" ng-model="item.religionLevel" name="religionLevel" placeholder="{{'religionLevel' | translate}}">
                         </div>
-                    </div>
 
-                    <div class="row">
                         <div class="form-group col-md-6">
                             <label translate>socialLevel</label>
                             <input type="text" class="form-control" ng-model="item.socialLevel" name="socialLevel" placeholder="{{'socialLevel' | translate}}">
@@ -211,11 +199,9 @@
 
                         <div class="form-group col-md-6">
                             <label translate>about</label>
-                            <textarea class="form-control" ng-model="item.about" name="about" placeholder="{{'about' | translate}}"/>
+                            <input type="text" class="form-control" ng-model="item.about" name="about" placeholder="{{'about' | translate}}"/>
                         </div>
-                    </div>
 
-                    <div class="row">
                         <div class="form-group col-md-6">
                             <label translate>partenerCharcs</label>
                             <input type="text" class="form-control" ng-model="item.partenerCharcs" name="partenerCharcs" placeholder="{{'partenerCharcs' | translate}}">
@@ -225,9 +211,7 @@
                             <label translate>phoneNumber</label>
                             <input type="text" class="form-control" ng-model="item.phoneNumber" name="phoneNumber" placeholder="{{'phoneNumber' | translate}}">
                         </div>
-                    </div>
 
-                    <div class="row">
                         <div class="form-group col-md-6">
                             <label translate>fatherPhoneNumber</label>
                             *
@@ -236,7 +220,6 @@
                                 <div class="help-block" ng-message="required">{{'field.required' | translate}}</div>
                             </div>
                         </div>
-
                     </div>
 
                     <div class="row">

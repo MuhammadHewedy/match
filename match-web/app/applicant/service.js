@@ -4,8 +4,8 @@
 
 angular.module('myApp').factory('Applicant', ['$resource', function($resource) {
 
-    return $resource('/api/applicants/:id', {
-        id: '@id'
+    return $resource('/api/applicants/:_id', {
+        _id: '@_id'
     }, {
         update: {
             method: 'PUT'
@@ -15,6 +15,7 @@ angular.module('myApp').factory('Applicant', ['$resource', function($resource) {
             params: {
                 page: '@page',
                 size: '@size',
+                id: '@id',
                 gender: '@gender',
                 age: '@age',
                 nationality: '@nationality',
@@ -24,7 +25,8 @@ angular.module('myApp').factory('Applicant', ['$resource', function($resource) {
                 job: '@job',
                 religion: '@religion',
                 maritalStatus: '@maritalStatus',
-                maritalStatus: '@maritalStatus'
+                maritalStatus: '@maritalStatus',
+                sort: 'id,desc'
             }
         }
     });

@@ -19,6 +19,7 @@ angular.module('myApp')
 
         Applicant.query({
             page: $scope.currentPage - 1,
+            id: $scope.item.id,
             gender: $scope.item.gender,
             age: $scope.item.age,
             nationality: $scope.item.nationality,

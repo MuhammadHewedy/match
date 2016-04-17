@@ -51,9 +51,9 @@ public class ApplicantController extends CrudController<Applicant, ApplicantRepo
 	}
 
 	@Override
-	@RequestMapping(method = RequestMethod.PUT, path = "/{id}")
-	public ResponseEntity<Void> update(@PathVariable("id") Long id, @RequestBody @Valid Applicant applicant) {
-		return super.update(id, applicant);
+	@RequestMapping(method = RequestMethod.PUT)
+	public ResponseEntity<Void> update(@RequestBody @Valid Applicant applicant) {
+		return super.update(applicant);
 	}
 
 	@Override

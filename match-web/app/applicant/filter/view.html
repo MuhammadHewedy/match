@@ -1,5 +1,11 @@
 <form name="form" novalidate>
     <div class="row">
+
+        <div class="form-group col-md-6">
+            <label translate>id</label>
+            <input type="number" class="form-control" ng-model="item.id" name="id" placeholder="{{'id' | translate}}">
+        </div>
+
         <div class="form-group col-md-6">
             <label translate>gender</label>
             <select class="form-control" ng-model="item.gender" name="gender">
@@ -16,9 +22,7 @@
             <label translate>age</label>
             <input type="number" class="form-control" ng-model="item.age" name="age" placeholder="{{'age' | translate}}">
         </div>
-    </div>
 
-    <div class="row">
         <div class="form-group col-md-6">
             <label translate>nationality</label>
             <select class="form-control" ng-model="item.nationality" name="nationality">
@@ -32,9 +36,7 @@
                 <option ng-repeat="country in lookups.countries | orderBy:country" value="{{country}}">{{country}}</option>
             </select>
         </div>
-    </div>
 
-    <div class="row">
         <div class="form-group col-md-6">
             <label translate>weight</label>
             <input type="number" class="form-control" ng-model="item.weight" name="weight" placeholder="{{'weight' | translate}}">
@@ -44,9 +46,7 @@
             <label translate>length</label>
             <input type="number" class="form-control" ng-model="item.length" name="length" placeholder="{{'length' | translate}}">
         </div>
-    </div>
 
-    <div class="row">
         <div class="form-group col-md-6">
             <label translate>job</label>
             <input type="text" class="form-control" ng-model="item.job" name="job" placeholder="{{'job' | translate}}">
@@ -59,9 +59,7 @@
             </select>
         </div>
 
-    </div>
 
-    <div class="row">
         <div class="form-group col-md-6">
             <label translate>maritalStatus</label>
             <select class="form-control" ng-model="item.maritalStatus" name="maritalStatus">

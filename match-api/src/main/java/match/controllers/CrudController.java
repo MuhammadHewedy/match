@@ -23,7 +23,7 @@ public abstract class CrudController<T extends BaseEntity, R extends CrudReposit
 		return ResponseEntity.ok().build();
 	}
 
-	public ResponseEntity<Void> update(Long id, T t) {
+	public ResponseEntity<Void> update(T t) {
 		getRepository().save(t);
 		return ResponseEntity.ok().build();
 	}
