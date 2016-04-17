@@ -14,7 +14,7 @@ angular.module('myApp').factory('Admin', ['$resource', function($resource) {
             isArray: false,
             params: {
                 page: '@page',
-                size: '@size'
+                sort: 'id,desc'
             }
         }
     });
