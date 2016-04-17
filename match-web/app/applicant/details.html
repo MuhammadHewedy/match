@@ -223,12 +223,18 @@
 
                         <div class="form-group col-md-6">
                             <label translate>fbAccount</label>
-                            <input type="text" class="form-control" ng-model="item.fbAccount" name="fbAccount" placeholder="{{'fbAccount' | translate}}">
+                            <div class="input-group">
+                                <input type="text" class="form-control" ng-model="item.fbAccount" name="fbAccount" placeholder="{{'fbAccount' | translate}}" aria-describedby="fb-addon">
+                                <span class="input-group-addon" id="fb-addon">https://facebook.com</span>
+                            </div>
                         </div>
 
                         <div class="form-group col-md-6">
                             <label translate>twtAccount</label>
-                            <input type="text" class="form-control" ng-model="item.twtAccount" name="twtAccount" placeholder="{{'twtAccount' | translate}}">
+                            <div class="input-group">
+                                <input type="text" class="form-control" ng-model="item.twtAccount" name="twtAccount" placeholder="{{'twtAccount' | translate}}" aria-describedby="twt-addon">
+                                <span class="input-group-addon" id="twt-addon">https://twitter.com</span>
+                            </div>
                         </div>
                     </div>
 
