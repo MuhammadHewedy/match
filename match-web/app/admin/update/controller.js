@@ -15,7 +15,7 @@ angular.module('myApp')
 
     // -- get
     Admin.get({
-        id: $routeParams.id
+        _id: $routeParams.id
     }, function(item) {
         $scope.item = item;
     })

@@ -4,8 +4,8 @@
 
 angular.module('myApp').factory('Admin', ['$resource', function($resource) {
 
-    return $resource('/api/admins/:id', {
-        id: '@id'
+    return $resource('/api/admins/:_id', {
+        _id: '@_id'
     }, {
         update: {
             method: 'PUT'
