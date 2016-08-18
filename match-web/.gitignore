@@ -6,3 +6,7 @@ tmp
 .DS_Store
 .idea
 *.log
+.classpath
+.settings
+target
+.project
