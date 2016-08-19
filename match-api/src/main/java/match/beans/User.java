@@ -11,7 +11,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -35,8 +34,7 @@ public class User extends BaseEntity implements UserDetails {
 	private static final long serialVersionUID = -2019049247658306718L;
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_seq_gen")
-	@SequenceGenerator(name = "user_seq_gen", sequenceName = "user_id_seq")
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	protected Long id;
 
 	@NotNull
