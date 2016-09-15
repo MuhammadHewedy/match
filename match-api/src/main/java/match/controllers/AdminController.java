@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -29,10 +30,15 @@ import match.beans.repos.UserRepo;
 public class AdminController extends CrudController<User, UserRepo> {
 
 	@Getter
-	@Autowired
 	private UserRepo repository;
-	@Autowired
+	
 	private PasswordEncoder passwordEncoder;
+	
+	@Autowired
+	public AdminController(UserRepo userRepo, PasswordEncoder passwordEncoder) {
+		this.repository = userRepo;
+		this.passwordEncoder = passwordEncoder;
+	}
 
 	@Override
 	@RequestMapping(method = RequestMethod.GET, path = "/{id}")
