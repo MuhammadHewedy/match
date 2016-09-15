@@ -13,6 +13,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.MediaType;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
@@ -39,16 +40,14 @@ public class AdminControllerIntTest {
 	private MockMvc mockMvc;
 	
 	private MockMvc mockedMockMvc;
-	
 
 	@Before
 	public void setup() {
 		MockitoAnnotations.initMocks(this);
-		
-		doReturn("encoded_password").when(passwordEncoder).encode(anyString());
 
-		this.mockedMockMvc = MockMvcBuilders.standaloneSetup(new AdminController(mockedUserRepo, passwordEncoder)).build();
-		
+		doReturn("encoded_password").when(passwordEncoder).encode(anyString());
+		this.mockedMockMvc = MockMvcBuilders.standaloneSetup(new AdminController(mockedUserRepo, passwordEncoder))
+				.build();
 		this.mockMvc = MockMvcBuilders.standaloneSetup(new AdminController(userRepo, passwordEncoder)).build();
 	}
 
@@ -58,7 +57,7 @@ public class AdminControllerIntTest {
 		when(mockedUserRepo.save(any(User.class))).thenReturn(user);
 
 		this.mockedMockMvc.perform(post("/api/admins")
-				.contentType(TestUtil.APPLICATION_JSON_UTF8)
+				.contentType(MediaType.APPLICATION_JSON_UTF8)
 				.content(TestUtil.convertObjectToJsonBytes(user)))
 		.andDo(print())
 		.andExpect(status().isBadRequest());
@@ -72,7 +71,7 @@ public class AdminControllerIntTest {
 		when(mockedUserRepo.save(any(User.class))).thenReturn(user);
 
 		this.mockedMockMvc.perform(post("/api/admins")
-				.contentType(TestUtil.APPLICATION_JSON_UTF8)
+				.contentType(MediaType.APPLICATION_JSON_UTF8)
 				.content(TestUtil.convertObjectToJsonBytes(user)))
 		.andDo(print())
 		.andExpect(status().isOk());
@@ -86,13 +85,13 @@ public class AdminControllerIntTest {
 		user.setUsername("admin");
 
 		this.mockMvc.perform(post("/api/admins")
-				.contentType(TestUtil.APPLICATION_JSON_UTF8)
+				.contentType(MediaType.APPLICATION_JSON_UTF8)
 				.content(TestUtil.convertObjectToJsonBytes(user)))
 		.andDo(print())
 		.andExpect(status().isOk());
 		
 		this.mockMvc.perform(post("/api/admins")
-				.contentType(TestUtil.APPLICATION_JSON_UTF8)
+				.contentType(MediaType.APPLICATION_JSON_UTF8)
 				.content(TestUtil.convertObjectToJsonBytes(user)))
 		.andDo(print())
 		.andExpect(status().isInternalServerError())
