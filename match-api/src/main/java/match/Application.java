@@ -8,12 +8,14 @@ import org.springframework.data.domain.AuditorAware;
 import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import match.util.Util;
 
 @EnableJpaAuditing
 @EnableJpaRepositories
 @SpringBootApplication
+@EnableTransactionManagement
 @EntityScan(basePackageClasses = { Application.class, Jsr310JpaConverters.class })
 public class Application {
 
