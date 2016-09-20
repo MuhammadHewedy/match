@@ -1,4 +1,4 @@
 language: java
 sudo: false
-script: ./match-api/mvnw clean verify
+script: cd match-api; mvn clean verify; cd -
 
