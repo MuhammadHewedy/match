@@ -43,7 +43,7 @@ public class ApplicantController extends CrudController<Applicant, ApplicantRepo
 
 	@Override
 	@RequestMapping(method = RequestMethod.POST)
-	public ResponseEntity<Void> save(@RequestBody @Valid Applicant applicant) {
+	public ResponseEntity<?> save(@RequestBody @Valid Applicant applicant) {
 		User user = applicant.getUser();
 		user.setRole(Role.ROLE_APPLICANT);
 		user.setPassword(passwordEncoder.encode(user.getPassword()));

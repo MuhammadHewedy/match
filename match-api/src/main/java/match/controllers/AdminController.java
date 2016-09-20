@@ -23,6 +23,7 @@ import match.beans.QUser;
 import match.beans.User;
 import match.beans.User.Role;
 import match.beans.repos.UserRepo;
+import match.util.Response;
 
 @RestController
 @RequestMapping("/api/admins")
@@ -48,7 +49,10 @@ public class AdminController extends CrudController<User, UserRepo> {
 
 	@Override
 	@RequestMapping(method = RequestMethod.POST)
-	public ResponseEntity<Void> save(@RequestBody @Valid User user) {
+	public ResponseEntity<?> save(@RequestBody @Valid User user) {
+		if (repository.exists(QUser.user.username.eq(user.getUsername()))) {
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Response.of("duplicate.user.name"));
+		}
 		user.setRole(Role.ROLE_ADMIN);
 		user.setPassword(passwordEncoder.encode(user.getPassword()));
 		return super.save(user);

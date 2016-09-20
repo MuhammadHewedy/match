@@ -2,13 +2,14 @@ package match.util;
 
 import java.io.IOException;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
 
 /**
  * Utility class for testing REST controllers.
  */
 public class TestUtil {
+	
+	private static final Gson gson = new Gson();
 
     /**
      * Convert an object to JSON byte array.
@@ -20,9 +21,8 @@ public class TestUtil {
      */
     public static byte[] convertObjectToJsonBytes(Object object)
             throws IOException {
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
-        return mapper.writeValueAsBytes(object);
+       String json = gson.toJson(object);
+       return json.getBytes("utf8");
     }
 
     /**

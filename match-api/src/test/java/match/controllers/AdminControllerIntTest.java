@@ -64,9 +64,23 @@ public class AdminControllerIntTest {
 	}
 	
 	@Test
+	public void testSaveInvalidUser2() throws Exception {
+		User user = new User();
+		user.setUsername("ali");
+		when(mockedUserRepo.save(any(User.class))).thenReturn(user);
+
+		this.mockedMockMvc.perform(post("/api/admins")
+				.contentType(MediaType.APPLICATION_JSON_UTF8)
+				.content(TestUtil.convertObjectToJsonBytes(user)))
+		.andDo(print())
+		.andExpect(status().isBadRequest());
+	}
+	
+	@Test
 	public void testSaveValidUser() throws Exception {
 		User user = new User();
 		user.setUsername("admin");
+		user.setPassword("123456");
 		
 		when(mockedUserRepo.save(any(User.class))).thenReturn(user);
 
@@ -77,12 +91,12 @@ public class AdminControllerIntTest {
 		.andExpect(status().isOk());
 	}
 	
-	// Test fails
 	@Transactional
-//	@Test
+	@Test
 	public void testSaveDupValidUser() throws Exception {
 		User user = new User();
 		user.setUsername("admin");
+		user.setPassword("123456");
 
 		this.mockMvc.perform(post("/api/admins")
 				.contentType(MediaType.APPLICATION_JSON_UTF8)
@@ -94,7 +108,7 @@ public class AdminControllerIntTest {
 				.contentType(MediaType.APPLICATION_JSON_UTF8)
 				.content(TestUtil.convertObjectToJsonBytes(user)))
 		.andDo(print())
-		.andExpect(status().isInternalServerError())
-		.andExpect(jsonPath("$.exception").value(contains("DataIntegrityViolationException")));
+		.andExpect(status().isBadRequest())
+		.andExpect(jsonPath("$.message").value("duplicate.user.name"));
 	}
 }

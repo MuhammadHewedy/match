@@ -41,6 +41,7 @@ public class User extends BaseEntity implements UserDetails {
 	@Column(updatable = false, unique = true)
 	private String username;
 
+	@NotNull
 	@JsonProperty(access = Access.WRITE_ONLY)
 	@Column(updatable = false)
 	private String password;
