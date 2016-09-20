@@ -19,6 +19,8 @@ public class TestUtil {
      * @return the JSON byte array
      * @throws IOException
      */
+	// I use gson here and not Jackson, as I use jackson for the src/main/java, and then I use some jackson annotation to skip some fields,
+	// but in testing I don't want to create a complete object as the user will send from the api console
     public static byte[] toJson(Object object)
             throws IOException {
        String json = gson.toJson(object);
