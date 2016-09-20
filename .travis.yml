@@ -1,2 +1,4 @@
 language: java
-./match-api/mvnw
+sudo: false
+script: ./match-api/mvnw clean verify
+
