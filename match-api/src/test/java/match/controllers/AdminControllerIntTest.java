@@ -58,7 +58,7 @@ public class AdminControllerIntTest {
 
 		this.mockedMockMvc.perform(post("/api/admins")
 				.contentType(MediaType.APPLICATION_JSON_UTF8)
-				.content(TestUtil.convertObjectToJsonBytes(user)))
+				.content(TestUtil.toJson(user)))
 		.andDo(print())
 		.andExpect(status().isBadRequest());
 	}
@@ -71,7 +71,7 @@ public class AdminControllerIntTest {
 
 		this.mockedMockMvc.perform(post("/api/admins")
 				.contentType(MediaType.APPLICATION_JSON_UTF8)
-				.content(TestUtil.convertObjectToJsonBytes(user)))
+				.content(TestUtil.toJson(user)))
 		.andDo(print())
 		.andExpect(status().isBadRequest());
 	}
@@ -86,7 +86,7 @@ public class AdminControllerIntTest {
 
 		this.mockedMockMvc.perform(post("/api/admins")
 				.contentType(MediaType.APPLICATION_JSON_UTF8)
-				.content(TestUtil.convertObjectToJsonBytes(user)))
+				.content(TestUtil.toJson(user)))
 		.andDo(print())
 		.andExpect(status().isOk());
 	}
@@ -100,13 +100,13 @@ public class AdminControllerIntTest {
 
 		this.mockMvc.perform(post("/api/admins")
 				.contentType(MediaType.APPLICATION_JSON_UTF8)
-				.content(TestUtil.convertObjectToJsonBytes(user)))
+				.content(TestUtil.toJson(user)))
 		.andDo(print())
 		.andExpect(status().isOk());
 		
 		this.mockMvc.perform(post("/api/admins")
 				.contentType(MediaType.APPLICATION_JSON_UTF8)
-				.content(TestUtil.convertObjectToJsonBytes(user)))
+				.content(TestUtil.toJson(user)))
 		.andDo(print())
 		.andExpect(status().isBadRequest())
 		.andExpect(jsonPath("$.message").value("duplicate.user.name"));

@@ -19,7 +19,7 @@ public class TestUtil {
      * @return the JSON byte array
      * @throws IOException
      */
-    public static byte[] convertObjectToJsonBytes(Object object)
+    public static byte[] toJson(Object object)
             throws IOException {
        String json = gson.toJson(object);
        return json.getBytes("utf8");
