@@ -14,7 +14,7 @@ import match.beans.repos.UserRepo;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = match.Application.class)
-public class SuperAdminIntIntTest {
+public class SuperAdminIntTest {
 
 	@Autowired
 	private UserRepo userRepository;
